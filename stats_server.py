@@ -130,6 +130,13 @@ class StatsHandler(BaseHTTPRequestHandler):
         self.wfile.write(json.dumps(data, ensure_ascii=False).encode('utf-8'))
 
     def _serve_report(self):
+        # 支持 ?format=json 返回纯 JSON（供前端面板调用）
+        from urllib.parse import parse_qs
+        query = parse_qs(urlparse(self.path).query)
+        if query.get('format', [''])[0] == 'json':
+            self._serve_json()
+            return
+
         data   = load_data()
         counts = data.get('counts', {})
         logs   = data.get('logs', [])

@@ -1,3 +1,5 @@
+
+
 # DDD数智通 · 使用统计功能说明
 
 ------
@@ -167,7 +169,9 @@ http://内网服务器IP:8765/api/stats
 cat stats_data.json
 ```
 
-### 设置开机自启（Linux 推荐）
+### 设置开机自启
+
+- ### Linux 
 
 ```bash
 sudo nano /etc/systemd/system/ddd-stats.service
@@ -189,7 +193,11 @@ sudo systemctl start ddd-stats    # 立即启动
 sudo systemctl status ddd-stats   # 查看状态
 ```
 
-------
+- **Windows**
+
+```
+《启动统计服务.vbs》
+```
 
 ## 四、文件清单
 
