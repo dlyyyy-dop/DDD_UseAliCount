@@ -706,7 +706,7 @@
         <input class="form-input" id="s2-py" placeholder="如 AMXL" oninput="tab2Search()" style="text-transform:uppercase">
       </div>
       <div class="btn-row">
-        <button class="btn btn-primary" onclick="tab2Search()">查找</button>
+        <button class="btn btn-primary" onclick="tab2Search()" style="display:none">查找</button>
         <button class="btn btn-accent"  onclick="tab2ShowAll()">显示全部</button>
         <button class="btn btn-gray"    onclick="tab2ClearSearch()">清空</button>
         <button class="btn btn-orange"  onclick="openImport(2)">📂 导入数据</button>
@@ -1479,7 +1479,7 @@ updateSourceTag(2);
         fetchUrl = `${CF_WORKER_API}/api/stats`;
         if (envTag) {
           envTag.className = 'stats-env-tag internet';
-          envTag.textContent = '🌐 生产环境 (阿里云 FC 新加坡节点)';
+          envTag.textContent = '🌐 生产环境 (阿里云 FC)';
         }
       }
 
