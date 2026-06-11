@@ -642,7 +642,7 @@
         <input class="form-input" id="s1-py" placeholder="如 AMXL" oninput="tab1Search()" style="text-transform:uppercase">
       </div>
       <div class="btn-row">
-        <button class="btn btn-primary" onclick="tab1Search()">查询</button>
+        <button class="btn btn-primary" onclick="tab1Search()" style="display:none">查询</button>
         <button class="btn btn-accent"  onclick="tab1ShowAll()">显示全部</button>
         <button class="btn btn-gray"    onclick="tab1Clear()">清空</button>
         <button class="btn btn-orange"  onclick="openImport(1)">📂 导入数据</button>
@@ -1593,6 +1593,8 @@ updateSourceTag(2);
   function initStats() {
     track('page_view');
     loadBadgeQuiet();
+    // 后台每30秒静默刷新一次右上角数字，不依赖面板是否打开
+    setInterval(loadBadgeQuiet, 30000);
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initStats);
